@@ -8,7 +8,7 @@ public class Alumno {
     private String apellidos;
     private String dni;
     private String telefono;
-
+    private Grupo grupo = null;
 
     public Alumno(String nombre, String apellidos, String dni, String telefono) {
         this.nombre = nombre;
@@ -47,5 +47,23 @@ public class Alumno {
 
     public void setTelefono(String telefono) {
         this.telefono = telefono;
+    }
+
+    public Grupo getGrupo() {
+        return grupo;
+    }
+
+    public void setGrupo(Grupo grupo) {
+        this.grupo = grupo;
+    }
+
+    @Override
+    public String toString() {
+        return "Alumno{" +
+                "nombre='" + nombre + '\'' +
+                ", apellidos='" + apellidos + '\'' +
+                ", dni='" + dni + '\'' +
+                ", telefono='" + telefono + '\'' +
+                '}';
     }
 }

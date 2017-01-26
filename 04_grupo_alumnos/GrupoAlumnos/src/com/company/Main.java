@@ -10,7 +10,6 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Introduce el nombre del grupo");
         Grupo g = new Grupo(br.readLine());
-        Alumno[] a = g.getAlumnos();
 
         for (int i = 0; i < 5; i++) {
             System.out.print("Introduce el nombre: ");
@@ -22,14 +21,12 @@ public class Main {
             System.out.print("Introduce el telefono: ");
             String telefono = br.readLine();
 
-            a[i] = new Alumno(nombre,apellido,dni,telefono);
+            g.addAlumno(new Alumno(nombre,apellido,dni,telefono));
 
         }
-        g.setAlumnos(a);
-        System.out.println("Grupo: "+g.getCodigo());
+        System.out.println(g.toString());
         for (int i = 0; i < 5; i++) {
-            System.out.println("Nombre: "+g.getAlumnos()[i].getNombre()+" Apellido: "+g.getAlumnos()[i].getApellidos()+" DNI: "
-                    +g.getAlumnos()[i].getDni()+" Teléfono: "+g.getAlumnos()[i].getTelefono());
+            //System.out.println(g.getAlumnos().toString());
         }
     }
 }

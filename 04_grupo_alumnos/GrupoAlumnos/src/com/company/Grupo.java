@@ -6,9 +6,16 @@ package com.company;
 public class Grupo {
     private String codigo;
     Alumno[] alumnos = new Alumno[5];
-
+    int contAlumno=0;
     public Grupo(String codigo) {
         this.codigo = codigo;
+    }
+
+    @Override
+    public String toString() {
+        return "Grupo{" +
+                "codigo='" + codigo + '\'' +
+                '}';
     }
 
     public String getCodigo() {
@@ -23,7 +30,11 @@ public class Grupo {
         return alumnos;
     }
 
-    public void setAlumnos(Alumno[] alumnos) {
-        this.alumnos = alumnos;
+    public void addAlumno(Alumno a) {
+        if (contAlumno<5) {
+            alumnos[contAlumno] = a;
+            a.setGrupo(this);
+            contAlumno++;
+        }
     }
 }
