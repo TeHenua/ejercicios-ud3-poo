@@ -28,11 +28,4 @@ public class Rueda {
     public void setDiametro(String diametro) {
         this.diametro = diametro;
     }
-
-    @Override
-    public String toString() {
-        return "Rueda{" +
-                "diametro='" + diametro + '\'' +
-                '}';
-    }
 }

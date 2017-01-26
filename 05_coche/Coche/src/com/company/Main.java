@@ -39,28 +39,20 @@ public class Main {
             c.addRueda(r);
         }while (c.getNumRuedas()<4);
 
-        int numPuertas =0;
+        boolean cont= false;
+        int n=0;
         do {
-            System.out.println("¿Cuántas puertas tiene?");
-            numPuertas = Integer.parseInt(br.readLine());
-            if(numPuertas<2 || numPuertas>5){
-                System.out.println("Error. [2-5]");
-            }
-        }while (numPuertas>=2 && numPuertas<=5);
-
-        for (int i = 0; i < numPuertas; i++) {
             Puerta p = new Puerta();
-            System.out.println("¿Tiene elevalunas eléctrico?(si/no)");
-            String respueta = br.readLine();
-            if (respueta.equalsIgnoreCase("si")){
-                p.setElevalunasElectrico(true);
-            }else{
-                p.setElevalunasElectrico(false);
-            }
+            System.out.println("¿Tiene elevalunas eléctrico?(s/n)");
+            p.setElevalunasElectrico( br.readLine().equalsIgnoreCase("s"));
             c.addPuerta(p);
-        }
+            System.out.println("¿Quieres continuar? (s/n)");
+            cont = br.readLine().equalsIgnoreCase("s");
+            n++;
+        }while ((cont && n<5) || (n<2) );
 
-        System.out.println(c.toString());
+
+        System.out.println(c);
 
         
     }

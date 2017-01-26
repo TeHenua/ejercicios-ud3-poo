@@ -51,7 +51,7 @@ public class Coche {
     }
 
     public Coche() {
-        motores = new Motor[5];
+        motores = new Motor[10];
         ruedas = new Rueda[4];
         puertas = new Puerta[5];
     }
